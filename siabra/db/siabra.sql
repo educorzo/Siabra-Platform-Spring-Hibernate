@@ -34,11 +34,18 @@ CREATE TABLE PaginasWeb (
   webProfesiona varchar(90)
 );
 
-CREATE TABLE siabra.Perfil (
+CREATE TABLE Perfil (
   username VARCHAR(255) NOT NULL,
   codigo VARCHAR(10) NOT NULL,
   permisos VARCHAR(17) NULL,
   descripcion VARCHAR(200) NULL,
   PRIMARY KEY (username),
   UNIQUE INDEX codigo_UNIQUE (codigo ASC));
+  
+CREATE TABLE ListaPerfiles (
+  idListaPerfiles INT NOT NULL,
+  username VARCHAR(255) NULL,
+  codigoPerfil VARCHAR(10) NULL,
+  PRIMARY KEY (idListaPerfiles));
+  
   

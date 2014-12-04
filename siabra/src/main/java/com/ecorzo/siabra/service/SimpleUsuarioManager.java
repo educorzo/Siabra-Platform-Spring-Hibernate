@@ -42,5 +42,9 @@ public class SimpleUsuarioManager implements UsuarioManager {
 		}
 		return usuario;
 	}
+	
+	public void setUsuarioDAO(UserDAO usuario){
+		userDAO=usuario;
+	}
 
 }
