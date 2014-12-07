@@ -30,7 +30,7 @@ public class SimpleUsuarioManagerTest {
 	}
 	
 	@Test
-	public void comprobarGet() {
+	public void testGetUser() {
 		User usuarioPrueba=usuarioManager.getUsuario("pepe");
 		assertNotNull(usuarioPrueba);
 		assertEquals(EMAIL,usuarioPrueba.getEmail());

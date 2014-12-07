@@ -1,6 +1,5 @@
 package com.ecorzo.siabra.repository;
 import java.util.List;
-
 import com.ecorzo.siabra.domain.User;
 
 public class InMemoryUserDAO implements UserDAO{
@@ -37,8 +36,5 @@ public class InMemoryUserDAO implements UserDAO{
 	public List<User> findAll() throws BussinessException {
 		// TODO Auto-generated method stub
 		return null;
-	}
-
-
-	 
+	}	 
 }

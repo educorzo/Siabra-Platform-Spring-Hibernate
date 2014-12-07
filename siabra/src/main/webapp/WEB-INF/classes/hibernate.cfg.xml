@@ -14,7 +14,8 @@
    <mapping class="com.ecorzo.siabra.domain.User" />
    <mapping class="com.ecorzo.siabra.domain.DatosPersonales" />
    <mapping class="com.ecorzo.siabra.domain.PaginasWeb" />
-   <!--  <mapping class="com.ecorzo.siabra.domain.Perfil" />
-   <mapping class="com.ecorzo.siabra.domain.ListaPerfiles" />-->
+    <mapping class="com.ecorzo.siabra.domain.Perfil" />
+    <mapping class="com.ecorzo.siabra.domain.Imagen"/>
+   <!-- <mapping class="com.ecorzo.siabra.domain.ListaPerfiles" />-->
   </session-factory>
 </hibernate-configuration>

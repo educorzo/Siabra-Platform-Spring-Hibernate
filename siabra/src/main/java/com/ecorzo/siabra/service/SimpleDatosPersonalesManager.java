@@ -42,4 +42,7 @@ public class SimpleDatosPersonalesManager implements DatosPersonalesManager {
 		}
 		return false;
 	}
+	public void setDatosPersonalesDAO(DatosPersonalesDAO datosDAO){
+		datosPersonalesDAO=datosDAO;
+	}
 }

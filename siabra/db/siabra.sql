@@ -48,4 +48,10 @@ CREATE TABLE ListaPerfiles (
   codigoPerfil VARCHAR(10) NULL,
   PRIMARY KEY (idListaPerfiles));
   
+ CREATE TABLE `springapp`.`Imagen` (
+  `username` VARCHAR(255) NOT NULL,
+  `target_id` VARCHAR(32) NULL,
+  `imagen` BLOB NULL,
+  PRIMARY KEY (`username`));
+  
   

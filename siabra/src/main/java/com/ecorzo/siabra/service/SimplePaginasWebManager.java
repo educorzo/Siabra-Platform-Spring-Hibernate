@@ -40,5 +40,9 @@ public class SimplePaginasWebManager implements PaginasWebManager {
 		}
 		return paginas;
 	}
+	
+	public void setPaginasWebDAO(PaginasWebDAO paginasDAO){
+		this.paginasDAO=paginasDAO;
+	}
 
 }
