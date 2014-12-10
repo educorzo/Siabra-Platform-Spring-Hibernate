@@ -7,18 +7,18 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
-@Table(name="User")
+@Table(name="Imagen")
 public class Imagen implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
 	@Column(name = "username")
 	private String username;
 	
-	@Column(name="imagen")
-	private byte[] imagen;
-	
 	@Column(name="target_id")
 	private String target_id;
+	
+	@Column(name="imagen")
+	private byte[] imagen;
 	
 	public void setUsername(String username){
 		this.username=username;

@@ -21,5 +21,6 @@ http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 			<value>.jsp</value>
 		</property>
 	</bean>
-
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+ 
 </beans>

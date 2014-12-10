@@ -8,4 +8,5 @@ public interface ImagenManager extends Serializable{
 	public Imagen getImagen(String username);
 	public boolean guardarImagen(Imagen imagen);
 	public boolean comprobarImagen(Imagen imagen);
+	public String enviarAVuforia(Imagen imagen);
 }

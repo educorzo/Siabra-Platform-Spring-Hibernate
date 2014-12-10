@@ -21,7 +21,10 @@ http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 		<security:intercept-url pattern="/main*"
 			access="ROLE_ADMIN" />
 		<security:intercept-url pattern="/registro*" />
-		<security:intercept-url pattern="/datos*" access="ROLE_ADMIN"/>
+		<security:intercept-url pattern="/datos*"
+			access="ROLE_ADMIN" />
+		<security:intercept-url pattern="/imagen*"
+			access="ROLE_ADMIN" />
 		<security:form-login login-page="/login"
 			default-target-url="/main" authentication-failure-url="/loginError" />
 	</security:http>
