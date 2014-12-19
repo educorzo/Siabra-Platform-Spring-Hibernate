@@ -74,7 +74,6 @@ public class DatosPersonalesController {
 		datos.setDNI((String) request.getParameter("dni"));
 		datos.setEmpresa((String) request.getParameter("empresa"));
 		datos.setEstatus((String) request.getParameter("estatus"));
-		
 		Date date= new Date();
 		try {
 			if( request.getParameter("nacimiento")!=""){
