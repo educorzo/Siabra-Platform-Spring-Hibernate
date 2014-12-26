@@ -34,6 +34,8 @@ public class RegistroController {
 		User entity= new User();
 		entity.setUsername((String) request.getParameter("username"));
 		entity.setEmail((String) request.getParameter("email"));
+		String p=(String) request.getParameter("password1");
+		String p2=(String) request.getParameter("password2");
 		if((String) request.getParameter("password1")==(String) request.getParameter("password2")){
 			entity.setPassword((String) request.getParameter("password1"));
 			gestionUsuario.guardarUsuario(entity);

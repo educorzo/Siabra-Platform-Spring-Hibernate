@@ -8,11 +8,19 @@ import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.validator.routines.EmailValidator;
+import org.apache.commons.validator.routines.UrlValidator;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ecorzo.siabra.domain.DatosPersonales;
@@ -36,7 +44,7 @@ public class DatosPersonalesController {
 		model=datosToModel(usuario, datos, model);
 		return new ModelAndView("datos_page", "model", model);
 	}
-	
+	/*
 	@RequestMapping(value = "/datos/registro", method = RequestMethod.POST)
 	public String registrarDatosPersonales(Principal principal, ModelMap model, HttpServletRequest request, HttpServletResponse response) {
 		String name = principal.getName();
@@ -46,8 +54,39 @@ public class DatosPersonalesController {
 		datos.setUsername(name);
 		datosPersonalesM.guardarDatosPersonales(datos);
 		return "datos_page";
-	}
+	}*/
 	
+	@RequestMapping(value = "/datos/registro", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
+	 public @ResponseBody ResponseEntity<String> registrarDatosPersonales(Principal principal, HttpServletRequest request) {
+		EmailValidator emailValidator = EmailValidator.getInstance();//singleton
+		JSONObject json= new JSONObject();
+		String name = principal.getName();
+		DatosPersonales datos=requestToDatos( request);
+		User usuario=requestToUser(request, usuarioM.getUsuario(name));
+		Boolean validar=true;
+		if(!emailValidator.isValid(usuario.getEmail()) && !usuario.getEmail().isEmpty()){
+			validar=false;
+		}
+		if(validar){
+			usuarioM.guardarUsuario(usuario);
+			datos.setUsername(name);
+			datosPersonalesM.guardarDatosPersonales(datos);
+			try {
+				json.accumulate("Status","Exito");
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+		}else{
+			try {
+				json.accumulate("Status","Error");
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+		}
+        HttpHeaders responseHeaders = new HttpHeaders(); 
+        responseHeaders.add("Content-Type", "application/json; charset=utf-8"); 
+        return new ResponseEntity<String>(json.toString(), responseHeaders, HttpStatus.CREATED);
+	}
 	
 	private ModelMap datosToModel(User usuario, DatosPersonales datos, ModelMap model){
 		model.addAttribute("nombre", usuario.getFirst_name());
@@ -93,8 +132,8 @@ public class DatosPersonalesController {
 	
 	private User requestToUser(HttpServletRequest request, User usuario){
 		//AL introducir usuario, mantiene el mismo password, enabled y el resto de informacion
-		usuario.setFirst_name((String) request.getParameter("nombre"));
-		usuario.setLast_name((String) request.getParameter("apellidos"));
+		usuario.setFirst_name((String) request.getParameter("name"));
+		usuario.setLast_name((String) request.getParameter("lastName"));
 		usuario.setEmail((String) request.getParameter("email"));
 		return usuario;
 	}

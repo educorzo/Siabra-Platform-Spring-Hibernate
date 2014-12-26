@@ -13,7 +13,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li ><a href="datos">My personal data</a></li>
+            <li id="datos"><a href="datos">My personal data</a></li>
             <li id="webs"><a href="paginas">My websites</a></li>
             <li><a href="#contact">My profile</a></li>
             <li><a href="imagen">My image</a></li>
@@ -22,7 +22,7 @@
               <ul class="dropdown-menu" role="menu">
                 <li><a href="#"></a></li>
                 <li><a href="#">My app</a></li>
-                <li><a href="#">Dev guide</a></li>
+                <li><a href="guide">Dev guide</a></li>
               </ul>
             </li>
           </ul>

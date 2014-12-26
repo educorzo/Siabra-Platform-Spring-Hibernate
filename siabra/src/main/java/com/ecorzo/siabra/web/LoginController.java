@@ -31,5 +31,10 @@ public class LoginController {
 		return "login_page";
 
 	}
+	
+	@RequestMapping(value = "/guide", method = RequestMethod.GET)
+	public String guide(ModelMap model) {
+		return "guide_page";
+	}
 
 }

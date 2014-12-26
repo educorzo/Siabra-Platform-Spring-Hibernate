@@ -135,9 +135,11 @@
 			<artifactId>json</artifactId>
 			<version>20090211</version>
 		</dependency>
-
-
-
-
+		<!-- VALIDAR ELEMENTOS -->
+		<dependency>
+			<groupId>commons-validator</groupId>
+			<artifactId>commons-validator</artifactId>
+			<version>1.4.0</version>
+		</dependency>
 	</dependencies>
 </project>

@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script src="<c:url value="/resources/js/jqueryAjax.js" />"></script>
 <title>Custom Login Page</title>
 </head>
 <body onload='document.loginForm.j_username.focus();'>
@@ -31,28 +33,27 @@
 		</table>
 	</form>
 	
-	<form name='registroForm' action="/siabra/registro" method='POST'>
 		<table>
 			<tr>
 				<td>User:</td>
-				<td><input type='text' name='username' value=''></td>
+				<td><input type='text' id="username" name='username' value=''></td>
 			</tr>
 
 			<tr>
 				<td>Email:</td>
-				<td><input type='text' name='email' value=''></td>
+				<td><input type='text' id="email" name='email' value=''></td>
 			</tr>
 			<tr>
 				<td>Password:</td>
-				<td><input type='password' name='password1' value=''></td>
+				<td><input type='password' id="password" name='password1' value=''></td>
 			</tr>
 			<tr>
 				<td>Repita password:</td>
-				<td><input type='password' name='password2' value=''></td>
+				<td><input type='password' id="password2" name='password2' value=''></td>
 			</tr>
 
 			<tr>
-				<td><input name="submit" type="submit" value="submit" /></td>
+				<td><input name="submit" type="submit" value="submit" onClick="validaRegistro()" /></td>
 				<td><input name="reset" type="reset" /></td>
 			</tr>
 		</table>
