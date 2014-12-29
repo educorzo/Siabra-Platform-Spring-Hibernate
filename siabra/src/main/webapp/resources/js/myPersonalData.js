@@ -59,7 +59,7 @@ function save() {
 		validado = false
 	}
 	if (validado) {
-		$.post("http://localhost:8080/siabra/datos/registro", {
+		$.post("/siabra/datos/registro", {
 			'name' : name,
 			'lastName' : lastName,
 			'email' : email,

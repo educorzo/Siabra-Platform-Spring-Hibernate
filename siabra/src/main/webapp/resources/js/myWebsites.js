@@ -65,7 +65,7 @@ function validaWebsites() {
 		validado = false
 	}
 	if (validado) {
-		$.post("http://localhost:8080/siabra/paginas/registro", {
+		$.post("/siabra/paginas/registro", {
 			'facebook' : facebook,
 			'twitter' : twitter,
 			'linkedin' : linkedin,

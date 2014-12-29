@@ -8,4 +8,5 @@ public interface PerfilManager extends Serializable{
 	public Perfil getPerfil(String username);
 	public boolean guardarPerfil(Perfil perfil);
 	public boolean comprobarPerfil(Perfil perfil);
+	public boolean eliminarPerfil(String username);
 }

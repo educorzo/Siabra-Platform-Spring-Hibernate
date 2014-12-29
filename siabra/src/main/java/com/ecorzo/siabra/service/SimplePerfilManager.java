@@ -47,6 +47,18 @@ public class SimplePerfilManager implements PerfilManager {
 		return true;
 	}
 	
+	@Override
+	public boolean eliminarPerfil(String username){
+		try {
+			perfilDAO.delete(username);
+			return true;
+		} catch (BussinessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
 	public void setPerfilDAO(PerfilDAO perfilDAO){
 		this.perfilDAO=perfilDAO;
 	}

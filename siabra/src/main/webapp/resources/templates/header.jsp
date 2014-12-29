@@ -15,8 +15,8 @@
           <ul class="nav navbar-nav">
             <li id="datos"><a href="datos">My personal data</a></li>
             <li id="webs"><a href="paginas">My websites</a></li>
-            <li><a href="#contact">My profile</a></li>
-            <li><a href="imagen">My image</a></li>
+            <li id="perfil"><a href="perfil">My profile</a></li>
+            <li id="imagen"><a href="imagen">My image</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Developer <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
