@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.ecorzo.siabra.domain.Perfil;
 import com.ecorzo.siabra.service.PerfilManager;
 
@@ -99,9 +98,10 @@ public class PerfilController {
 	
 	@RequestMapping(value = "/perfil/eliminar", method = RequestMethod.POST)
 	public String registrarDatosPersonales(Principal principal, ModelMap model, HttpServletRequest request, HttpServletResponse response) {
-		String name = principal.getName();
-		
+		String name = principal.getName();	
 		return "datos_page";
 	}
+	
+	
 
 }//End of class
